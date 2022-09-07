@@ -1,5 +1,16 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
+        newstr = ""
+        
+        for c in s:
+            if c.isalnum():
+                newstr += c.lower()
+        return newstr == newstr[::-1]
+        
+        
+        
+        
+        '''
         l, r = 0, len(s) - 1
         while l < r:
             while l < r and not self.alphanum(s[l]):
@@ -18,4 +29,4 @@ class Solution:
             ord("A") <= ord(c) <= ord("Z")
             or ord("a") <= ord(c) <= ord("z")
             or ord("0") <= ord(c) <= ord("9")
-        )
+        )'''
