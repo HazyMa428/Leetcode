@@ -14,24 +14,25 @@ class Solution:
             slow = slow.next
             fast = fast.next.next
 
+
         # reverse second half
         second = slow.next
-        prev = None
-        slow.next = None
+        prev = slow.next = None
         while second:
-            tmp = second.next
+            temp = second.next
             second.next = prev
             prev = second
-            second = tmp
+            second = temp
+  
 
         # merge two halfs
         first, second = head, prev
         while second:
-            tmp1, tmp2 = first.next, second.next
+            temp1, temp2 = first.next, second.next
             first.next = second
-            second.next = tmp1
-            first, second = tmp1, tmp2
-
+            second.next = temp1
+            first, second = temp1, temp2
+  
 
 
 
