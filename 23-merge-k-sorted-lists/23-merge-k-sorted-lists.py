@@ -12,7 +12,11 @@ class Solution:
             mergedList = []
             for i in range(0, len(lists), 2):
                 l1 = lists[i]
-                l2 = lists[i + 1] if (i + 1) < len(lists) else None
+                if (i + 1) < len(lists):
+                    l2 = lists[i + 1]
+                else:
+                    l2 = None
+
 
                 mergedList.append(self.mergeList(l1, l2))
             lists = mergedList
