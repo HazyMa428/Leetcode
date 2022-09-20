@@ -3,13 +3,11 @@ class Solution:
         size = len(nums)
         insertIndex = 1
         for i in range(1, size):
-            # Found unique element
-            if nums[i - 1] != nums[i]:      
-                # Updating insertIndex in our main array
-                nums[insertIndex] = nums[i] 
-                # Incrementing insertIndex count by 1 
-                insertIndex = insertIndex + 1       
-            i = i + 1               
+            if nums[i-1] != nums[i]:
+                nums[insertIndex] = nums[i]
+                insertIndex += 1
+            i += 1
         return insertIndex
+    
         
         
