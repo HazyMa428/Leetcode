@@ -12,8 +12,8 @@ class Solution:
         # if the last element is greater than the first element then there is no rotation.
         # e.g. 1 < 2 < 3 < 4 < 5 < 7. Already sorted array.
         # Hence the smallest element is first element. A[0]
-        if nums[right] > nums[0]:
-            return nums[0]
+        if nums[right] > nums[left]:
+            return nums[left]
 
         # Binary search way
         while right >= left:
