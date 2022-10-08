@@ -1,6 +1,6 @@
 # Write your MySQL query statement below
 Select 
-    b.Name AS 'Employee'
+    b.Name AS Employee
 From
     Employee as a,
     Employee as b
