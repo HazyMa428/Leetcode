@@ -1,30 +1,22 @@
 # Write your MySQL query statement below
+
+
+
 SELECT id, 'Root' AS type
 FROM Tree
-WHERE
-    p_id is NULL
+WHERE p_id is NULL 
 
 UNION
 
-SELECT id, 'Leaf' AS Type
+SELECT id, 'Inner' AS type
 FROM Tree
-WHERE
-    id NOT IN (SELECT DISTINCT p_id
-              FROM Tree
-              WHERE p_id is NOT NULL)
-              AND p_id is NOT NULL
+WHERE p_id is NOT NULL AND id in (SELECT DISTINCT p_id FROM Tree WHERE p_id is NOT NULL)
 
-UNION 
+UNION
 
-SELECT id, 'Inner' AS Type
+SELECT id, 'Leaf' AS type
 FROM Tree
-WHERE
-    id in (SELECT DISTINCT 
-           p_id
-          FROM 
-           Tree
-          WHERE 
-           p_id is NOT NULL)
-           AND p_id is NOT NULL
+WHERE p_id is NOT NULL AND id NOT in (SELECT DISTINCT p_id FROM Tree WHERE p_id is NOT NULL)
+
 
 ORDER BY id;
