@@ -1,8 +1,24 @@
 # Write your MySQL query statement below
 
 
-select a.customer_id, a.customer_name
-from customers a , orders b
-where a.customer_id  = b.customer_id
-group by a.customer_id
-having sum(b.product_name="A") >0 and sum(b.product_name="B") > 0 and sum(b.product_name="C")=0
+
+
+
+select distinct customer_id, customer_name
+from Customers
+where customer_id in
+(
+    select customer_id
+    from Orders
+    where product_name='A'
+) and customer_id in
+(
+    select customer_id
+    from Orders
+    where product_name='B'
+) and customer_id not in
+(
+    select customer_id
+    from Orders
+    where product_name='C'
+) 
