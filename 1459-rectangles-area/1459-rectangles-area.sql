@@ -7,4 +7,4 @@ FROM Points pt1 JOIN Points pt2
 ON pt1.id<pt2.id
 AND pt1.x_value!=pt2.x_value 
 AND pt2.y_value!=pt1.y_value
-ORDER BY AREA DESC, p1 ASC, p2 ASC;
+ORDER BY AREA DESC, p1 , p2 ;
