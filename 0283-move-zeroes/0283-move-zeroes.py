@@ -8,5 +8,7 @@ class Solution:
             if num != 0:
                 nums[index] = num
                 index += 1
-        for i in range (index, len(nums)):
+        
+        for i in range(index, len(nums)):
             nums[i] = 0
+  
